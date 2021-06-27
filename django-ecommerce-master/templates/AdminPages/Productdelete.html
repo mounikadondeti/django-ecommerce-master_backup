@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<style>
+
+#card card-body{
+
+background colour = #fff;
+
+font = #ffff;
+}
+
+.bg-dark {
+    background-color: #2d1e3e!important;
+    height: 50px;
+
+}
+img {
+    vertical-align: middle;
+    border-style: none;
+    height: 30px;
+}
+.card {
+    -webkit-box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+    border: 0;
+    font-weight: 400;
+    width: 380px;
+    height: 130px;
+    margin-left: 200px;
+    background-color: #3C4858;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: wheat;
+}
+.navbar-dark .navbar-brand {
+    color: #fff;
+    margin-left: -80px;
+}
+body{
+	background-color:#2d4549;
+}
+.blue-text {
+    color: #2196f3!important;
+    margin-left: 150px;
+}
+</style>
+
+<br>
+<div class="row">
+	<div class="col-md-6">
+		<div class="card card-body">
+
+
+			<p>Are you sure you want to delete "{{item}}"?</p>
+
+			<form action="{% url 'core:delete_product' item.id %}" method="POST">
+				
+				{% csrf_token %}
+				<a class="btn btn-warning" href="{% url 'core:dashboard' %}">Cancel</a>
+
+				<input class="btn btn-danger" type="submit" name="Confirm">
+			</form>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

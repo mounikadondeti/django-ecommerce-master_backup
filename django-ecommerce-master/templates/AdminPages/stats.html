@@ -1,0 +1,71 @@
+<script>
+                       var ctx = document.getElementById('myChart1').getContext('2d');
+                        var myChart1 = new Chart(ctx, {
+                            type: 'bar',
+                            data: {
+                                labels: [{% for item in items %} '{{item.title}}', {% endfor %}],
+                                datasets: [{
+                                    label: 'Cost of Products',
+                                    data: [{% for item in items %} '{{ item.price }}', {% endfor %}],
+                                    backgroundColor: [
+                                        'rgba(255, 99, 132, 1)',
+                                        'rgba(54, 162, 235, 1)',
+                                        'rgba(255, 206, 86, 1)',
+                                        'rgba(75, 192, 192, 1)',
+                                        'rgba(153, 102, 255, 1)',
+                                        'rgba(255, 159, 64, 1)',
+                                        'rgba(255, 88, 75, 1)',
+                                         'rgba(220, 75, 115, 1)',
+                                        'rgba(62, 185, 120, 1)',
+                                        'rgba(210, 235, 95, 1)',
+                                        'rgba(172, 84, 163, 1)',
+                                        'rgba(115, 122, 255, 1)',
+                                        'rgba(186, 45, 164, 1)',
+                                        'rgba(255, 110, 98, 1)',
+                                        'rgba(45, 199, 174, 1)',
+                                        'rgba(254, 62, 35, 1)',
+                                        'rgba(155, 26, 186, 1)',
+                                        'rgba(175, 92, 82, 1)',
+                                        'rgba(153, 152, 195, 1)',
+                                        'rgba(185, 79, 64, 1)',
+                                        'rgba(145, 88, 75, 1)',
+                                    ],
+                                        borderColor: [
+                                                'rgba(255, 99, 132, 1)',
+                                        'rgba(54, 162, 235, 1)',
+                                        'rgba(255, 206, 86, 1)',
+                                        'rgba(75, 192, 192, 1)',
+                                        'rgba(153, 102, 255, 1)',
+                                        'rgba(255, 159, 64, 1)',
+                                        'rgba(255, 88, 75, 1)',
+                                         'rgba(220, 75, 115, 1)',
+                                        'rgba(62, 185, 120, 1)',
+                                        'rgba(210, 235, 95, 1)',
+                                        'rgba(172, 84, 163, 1)',
+                                        'rgba(115, 122, 255, 1)',
+                                        'rgba(186, 45, 164, 1)',
+                                        'rgba(255, 110, 98, 1)',
+                                        'rgba(45, 199, 174, 1)',
+                                        'rgba(254, 62, 35, 1)',
+                                        'rgba(155, 26, 186, 1)',
+                                        'rgba(175, 92, 82, 1)',
+                                        'rgba(153, 152, 195, 1)',
+                                        'rgba(185, 79, 64, 1)',
+                                        'rgba(145, 88, 75, 1)',
+                                        ],
+                                            borderWidth: 1
+                                }]
+                            },
+                        options: {
+                            title: {
+
+                                xAxes: [{
+                                    gridLines: {
+                                        offsetGridLines: true
+                                    }
+                                }]
+                            }
+                        }
+                        });
+
+                  </script>

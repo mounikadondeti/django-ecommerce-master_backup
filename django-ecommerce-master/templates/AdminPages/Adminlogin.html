@@ -1,0 +1,43 @@
+
+
+{% load static %}
+{% block content %}
+
+<style>
+    .errorlist {
+        color: red;
+    }
+
+    body{
+	background-color:#3C4858;
+	color:#ffff;
+	margin-left: 550px;
+    margin-top: 250px;
+}
+button{
+
+    margin-left: 80px;
+}
+h3{
+    margin-left: 70px;
+}
+}
+
+
+</style>
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card card-body">
+            <h3>Admin Login Form </h3>
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button class="btn btn-primary">Login as a Admin</button>
+                {% if error %}
+                <li style="color: red;">{{error}}</li>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
